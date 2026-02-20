@@ -4,7 +4,7 @@
   "description": "Portfólio de contato",
   "main": "server.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node server.js"
   },
   "dependencies": {
     "body-parser": "^1.20.3",

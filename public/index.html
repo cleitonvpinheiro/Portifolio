@@ -6,160 +6,132 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cleiton Pinheiro - Portfólio</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <!-- Navegação -->
     <nav id="navbar">
         <div class="container">
             <div class="logo">
-                <a href="#home">
-                    Cleiton Pinheiro
-                </a>
+                <a href="#home">CP</a>
             </div>
             <ul class="nav-links">
-                <li><a href="#home">Início</a></li>
-                <li><a href="#about">Sobre</a></li>
-                <li><a href="#skills">Habilidades</a></li>
-                <li><a href="#projects">Projetos</a></li>
-                <li><a href="#contact">Contato</a></li> <!-- Link para a seção de Contato -->
+                <li><a href="#home" data-i18n="nav.home">Início</a></li>
+                <li><a href="#about" data-i18n="nav.about">Sobre</a></li>
+                <li><a href="#skills" data-i18n="nav.skills">Habilidades</a></li>
+                <li><a href="#projects" data-i18n="nav.projects">Projetos</a></li>
+                <li><a href="#contact" data-i18n="nav.contact">Contato</a></li>
+                <li class="lang-item">
+                    <select id="lang-select" aria-label="Selecionar idioma">
+                        <option value="pt">Português</option>
+                        <option value="en">English</option>
+                    </select>
+                </li>
             </ul>
         </div>
     </nav>
 
-    <!-- Seção Home -->
     <header id="home">
         <div class="container">
-            <h1>Olá, eu sou <span class="txt-type" data-wait="3000"
-                    data-words='["Desenvolvedor", "Programador", "Criador"]'></span></h1>
+            <h1><span data-i18n="header.greeting">Olá, eu sou</span> <span class="txt-type" data-wait="3000" data-words='["Desenvolvedor","Programador","Criador"]'></span></h1>
             <h2>Cleiton Vicente Pinheiro</h2>
             <div class="social-links">
-                <a href="https://github.com/cleitonvpinheiro/" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/cleiton-vicente-pinheiro/" target="_blank"><i
+                <a href="https://github.com/cleitonvpinheiro/" target="_blank" aria-label="GitHub"><i
+                        class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/cleiton-vicente-pinheiro/" target="_blank" aria-label="LinkedIn"><i
                         class="fab fa-linkedin"></i></a>
             </div>
         </div>
     </header>
 
-    <!-- Seção Sobre -->
     <section id="about">
         <div class="container">
-            <h2>Sobre Mim</h2>
+            <h2 data-i18n="about.title">Sobre Mim</h2>
             <div class="about-content">
                 <div class="about-img">
-                    <img src="Avatar.jpg" alt="Cleiton Pinheiro">
+                    <img src="Avatar.jpg" alt="Cleiton Pinheiro" loading="lazy">
                 </div>
                 <div class="about-text">
-                    <p>
-                        Sou um analista de infraestrutura de TI em transição para a área de desenvolvimento de software,
-                        com uma paixão crescente por tecnologia e inovação. Ao longo da minha carreira, desenvolvi
-                        habilidades em várias linguagens e frameworks, como HTML, CSS, JavaScript, TypeScript e Node.js,
-                        e estou sempre em busca de aprender mais e melhorar minha experiência.
-                        <br>
-                        <br>
-                        Minha jornada profissional me ensinou a importância de uma abordagem estruturada e focada em
-                        resultados, e agora estou focado em aplicar esse conhecimento em projetos de desenvolvimento de
-                        software, onde posso criar soluções eficientes e impactantes.
-                        <br>
-                        <br>
-                        Além da minha carreira, sou pai de uma menina maravilhosa, casado, e compartilho meu tempo livre
-                        entre a paixão por futebol e videogames, sempre em busca de equilíbrio entre vida pessoal e
-                        profissional.
-                    </p>
-                    <a href="Cleiton Pinheiro.pdf" class="btn" download>Download CV</a>
+                    <p data-i18n="about.p1">Sou Desenvolvedor Full Stack com background em infraestrutura de TI, combinando base técnica sólida com experiência prática em desenvolvimento de software. Minha transição para desenvolvimento fortaleceu minha capacidade de resolução de problemas, visão sistêmica e foco na construção de soluções escaláveis e eficientes.</p>
+                    <p data-i18n="about.p2">Desenvolvo aplicações web e mobile utilizando JavaScript e TypeScript, atuando com Node.js no back-end e React Native no desenvolvimento mobile multiplataforma. Construo APIs REST, implemento regras de negócio, realizo integração com bancos de dados e estruturo sistemas completos, do front-end ao back-end.</p>
+                    <p data-i18n="about.p3">Tenho experiência no desenvolvimento de projetos reais como plataformas de e-commerce, sistemas de gestão logística, ferramentas de automação, dashboards analíticos e aplicações mobile com funcionamento offline.</p>
+                    <p data-i18n="about.p4">Minha abordagem prioriza arquitetura limpa, performance, escalabilidade e código bem estruturado, sempre buscando gerar valor real para o negócio.</p>
+                    <p data-i18n="about.p5">Além da tecnologia, sou pai, apaixonado por futebol, videogames e aprendizado contínuo. Disciplina, constância e visão de longo prazo orientam tanto minha vida profissional quanto pessoal.</p>
+                    <p data-i18n="about.mission">🚀 Minha missão é transformar desafios complexos em sistemas digitais confiáveis que impactam empresas e pessoas em escala.</p>
+                    <div class="cv-actions">
+                        <a href="Cleiton Pinheiro CV PT.pdf" class="btn cv-btn-pt" download data-i18n="about.cv_pt">Baixar CV (PT)</a>
+                        <a href="Cleiton Pinheiro CV EN.pdf" class="btn btn-outline cv-btn-en" download data-i18n="about.cv_en">Baixar CV (EN)</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Seção Habilidades -->
     <section id="skills">
         <div class="container">
-            <h2>Minhas Habilidades</h2>
+            <h2 data-i18n="skills.title">Minhas Habilidades</h2>
             <div class="skills-grid">
-                <div class="skill-item">
-                    <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML" target="_blank">
-                        <i class="fab fa-html5"></i>
-                    </a>
+                <div class="skill-item" style="--skill-level: 90%">
+                    <i class="fab fa-html5"></i>
                     <h3>HTML5</h3>
-                    <div class="skill-bar" data-skill="90"></div>
+                    <div class="skill-bar"></div>
                 </div>
-                <div class="skill-item">
-                    <a href="https://developer.mozilla.org/pt-BR/docs/Web/CSS" target="_blank">
-                        <i class="fab fa-css3-alt"></i>
-                    </a>
+                <div class="skill-item" style="--skill-level: 85%">
+                    <i class="fab fa-css3-alt"></i>
                     <h3>CSS3</h3>
-                    <div class="skill-bar" data-skill="85"></div>
+                    <div class="skill-bar"></div>
                 </div>
-                <div class="skill-item">
-                    <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript" target="_blank">
-                        <i class="fab fa-js"></i>
-                    </a>
+                <div class="skill-item" style="--skill-level: 80%">
+                    <i class="fab fa-js"></i>
                     <h3>JavaScript</h3>
-                    <div class="skill-bar" data-skill="80"></div>
+                    <div class="skill-bar"></div>
                 </div>
-                <div class="skill-item">
-                    <a href="https://reactjs.org/" target="_blank">
-                        <i class="fab fa-react"></i>
-                    </a>
+                <div class="skill-item" style="--skill-level: 80%">
+                    <i class="fab fa-react"></i>
                     <h3>React</h3>
-                    <div class="skill-bar" data-skill="80"></div>
+                    <div class="skill-bar"></div>
                 </div>
-                <div class="skill-item">
-                    <a href="https://nodejs.org/" target="_blank">
-                        <i class="fab fa-node-js"></i>
-                    </a>
+                <div class="skill-item" style="--skill-level: 75%">
+                    <i class="fab fa-node-js"></i>
                     <h3>Node.js</h3>
-                    <div class="skill-bar" data-skill="75"></div>
+                    <div class="skill-bar"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Seção Projetos -->
     <section id="projects">
         <div class="container">
-            <h2>Meus Projetos</h2>
-            <div id="github-stats" class="github-stats-container">
-                <!-- Estatísticas do GitHub serão carregadas dinamicamente -->
-            </div>
-            <div class="projects-grid" id="projects-container">
-                <!-- Projetos adicionados via JavaScript -->
-            </div>
-            <div class="social-links">
-                <a href="https://github.com/cleitonvpinheiro" id="github-profile" target="_blank"><i
-                        class="fab fa-github"></i></a>
-            </div>
-            <div class="whatsapp-container">
-                <a href="https://wa.me/5541988412058" id="whatsapp-link" class="whatsapp-btn" target="_blank"
-                    title="Fale comigo no WhatsApp">
-                    <i class="fab fa-whatsapp"></i> WhatsApp
+            <h2 data-i18n="projects.title">Meus Projetos</h2>
+            <div id="projects-container" class="projects-grid"></div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2 data-i18n="contact.title">Entre em Contato</h2>
+            <p data-i18n="contact.subtitle">Vamos trabalhar juntos? Entre em contato comigo!</p>
+            <div class="contact-links">
+                <a href="mailto:cleiton.v.pinheiro@gmail.com" class="contact-link">
+                    <i class="fas fa-envelope"></i>
+                    <span data-i18n="contact.email_label">E-mail</span>
+                </a>
+                <a href="https://www.linkedin.com/in/cleiton-vicente-pinheiro/" target="_blank" class="contact-link">
+                    <i class="fab fa-linkedin"></i>
+                    <span data-i18n="contact.linkedin_label">LinkedIn</span>
+                </a>
+                <a href="https://wa.me/5541988412058" target="_blank" class="contact-link">
+                    <i class="fab fa-whatsapp"></i>
+                    <span data-i18n="contact.whatsapp_label">WhatsApp</span>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Seção Contato -->
-    <section id="contact">
-        <div class="container">
-            <h2>Entre em Contato</h2>
-            <p>Se você tem alguma dúvida ou quer conversar, estou à disposição para ajudar.</p>
-            <div class="contact-links">
-                <a href="mailto:cleiton.v.pinheiro@gmail.com" class="contact-link">Envie um E-mail</a>
-                <a href="https://www.linkedin.com/in/cleiton-vicente-pinheiro/" target="_blank"
-                    class="contact-link">Visite meu LinkedIn</a>
-                <a href="https://wa.me/5541988412058" target="_blank" class="contact-link">Entre em contato no
-                    WhatsApp</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Rodapé -->
     <footer>
         <div class="container">
-            <p>&copy; 2024 Cleiton Pinheiro. Todos os direitos reservados.</p>
+            <p>&copy; 2024 Cleiton Pinheiro. <span data-i18n="footer.rights">Todos os direitos reservados.</span></p>
         </div>
     </footer>
 
