@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Visitas - Portfólio</title>
+  <style>
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;margin:0;background:#0b1220;color:#e5e7eb}
+    .wrap{max-width:960px;margin:0 auto;padding:32px}
+    h1{font-size:24px;margin:0 0 16px}
+    .grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:16px 0 24px}
+    .card{background:#0f1a33;border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:14px}
+    .label{opacity:.8;font-size:12px}
+    .value{font-size:24px;font-weight:700;margin-top:6px}
+    table{width:100%;border-collapse:collapse;background:#0f1a33;border:1px solid rgba(255,255,255,.08);border-radius:12px;overflow:hidden}
+    th,td{padding:10px 12px;border-bottom:1px solid rgba(255,255,255,.06);text-align:left;font-size:13px}
+    th{font-size:12px;opacity:.85}
+    tr:last-child td{border-bottom:none}
+    .muted{opacity:.7}
+    @media (max-width:860px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Visitas</h1>
+    <div class="grid">
+      <div class="card"><div class="label">Total (90 dias)</div><div id="total" class="value">-</div></div>
+      <div class="card"><div class="label">Hoje</div><div id="today" class="value">-</div><div id="todayUnique" class="muted"></div></div>
+      <div class="card"><div class="label">Últimos 7 dias</div><div id="last7" class="value">-</div><div id="last7Unique" class="muted"></div></div>
+      <div class="card"><div class="label">Últimos 30 dias</div><div id="last30" class="value">-</div></div>
+    </div>
+    <table>
+      <thead>
+        <tr><th>Dia</th><th>Total</th><th>Únicos</th></tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+    <div id="accessMode" class="muted" style="margin-top:12px">Acesso: token</div>
+  </div>
+  <script>
+    async function main(){
+      const params = new URLSearchParams(location.search);
+      const token = params.get('token') || '';
+      if(!token){
+        document.body.innerHTML = '<div class="wrap"><h1>Restrito</h1><div class="muted">Forneça o token: /stats.html?token=SEU_TOKEN</div></div>';
+        return;
+      }
+      const res = await fetch('/api/visits/stats?token=' + encodeURIComponent(token));
+      if(!res.ok){
+        document.body.innerHTML='<div class="wrap"><h1>Sem acesso</h1><div class="muted">Token inválido ou não configurado.</div></div>';
+        return;
+      }
+      const data = await res.json();
+      document.getElementById('total').textContent = data.total ?? '-';
+      document.getElementById('today').textContent = data.today ?? '-';
+      document.getElementById('todayUnique').textContent = (data.todayUnique != null) ? (data.todayUnique + ' únicos') : '';
+      document.getElementById('last7').textContent = data.last7 ?? '-';
+      document.getElementById('last7Unique').textContent = (data.last7Unique != null) ? (data.last7Unique + ' únicos') : '';
+      const last30 = Array.isArray(data.perDay) ? data.perDay.reduce((a,d)=>a+(d.total||0),0) : 0;
+      document.getElementById('last30').textContent = last30;
+      const rows = document.getElementById('rows');
+      rows.innerHTML = '';
+      (data.perDay||[]).slice().reverse().forEach(d=>{
+        const tr = document.createElement('tr');
+        tr.innerHTML = '<td>'+d.day+'</td><td>'+d.total+'</td><td>'+d.unique+'</td>';
+        rows.appendChild(tr);
+      });
+    }
+    main();
+  </script>
+</body>
+</html>

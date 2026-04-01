@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="meta.title">Cleiton Pinheiro - Full Stack Developer | Portfólio</title>
+    <meta name="description" data-i18n="meta.description"
+        content="Desenvolvedor Full Stack especializado em JavaScript, React, Node.js e Python. Criando soluções digitais inovadoras com foco em performance e experiência do usuário.">
+    <meta name="keywords"
+        content="desenvolvedor full stack, javascript, react, nodejs, python, portfolio, web developer, cleiton pinheiro">
+    <meta name="author" content="Cleiton Pinheiro">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cleitonpinheiro.dev/">
+    <meta property="og:title" data-i18n="meta.og_title" content="Cleiton Pinheiro - Full Stack Developer">
+    <meta property="og:description" data-i18n="meta.og_description"
+        content="Desenvolvedor Full Stack especializado em JavaScript, React, Node.js e Python.">
+    <meta property="og:image" content="./Avatar.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://cleitonpinheiro.dev/">
+    <meta property="twitter:title" data-i18n="meta.og_title" content="Cleiton Pinheiro - Full Stack Developer">
+    <meta property="twitter:description" data-i18n="meta.og_description"
+        content="Desenvolvedor Full Stack especializado em JavaScript, React, Node.js e Python.">
+    <meta property="twitter:image" content="./Avatar.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        as="style">
+    <link rel="preload" href="./Avatar.jpg" as="image">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+    <!-- Theme color -->
+    <meta name="theme-color" content="#2563eb">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Cleiton Pinheiro",
+        "jobTitle": "Full Stack Developer",
+        "description": "Desenvolvedor Full Stack especializado em JavaScript, React, Node.js e Python",
+        "url": "https://cleitonpinheiro.dev",
+        "sameAs": [
+            "https://github.com/cleitonvpinheiro",
+            "https://linkedin.com/in/cleiton-pinheiro"
+        ],
+        "knowsAbout": ["JavaScript", "React", "Node.js", "Python", "Full Stack Development"]
+    }
+    </script>
+</head>
+
+<body>
+    <!-- Skip Links para Acessibilidade -->
+    <a href="#main-content" class="skip-link" data-i18n="accessibility.skip_main">Pular para o conteúdo principal</a>
+    <a href="#navbar" class="skip-link" data-i18n="accessibility.skip_nav">Pular para a navegação</a>
+
+    <!-- Navegação -->
+    <nav id="navbar" class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="#home">
+                    <div class="logo-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="logo-content">
+                        <span class="logo-text">C.V.P</span>
+                        <span class="logo-subtitle" data-i18n="nav.role">Full Stack Developer</span>
+                    </div>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active" data-section="home">
+                        <i class="fas fa-home"></i>
+                        <span data-i18n="nav.home">Início</span>
+                    </a></li>
+                <li><a href="#about" class="nav-link" data-section="about">
+                        <i class="fas fa-user"></i>
+                        <span data-i18n="nav.about">Sobre</span>
+                    </a></li>
+                <li><a href="#experience" class="nav-link" data-section="experience">
+                        <i class="fas fa-briefcase"></i>
+                        <span data-i18n="nav.experience">Experiência</span>
+                    </a></li>
+                <li><a href="#skills" class="nav-link" data-section="skills">
+                        <i class="fas fa-cogs"></i>
+                        <span data-i18n="nav.skills">Habilidades</span>
+                    </a></li>
+                <li><a href="#projects" class="nav-link" data-section="projects">
+                        <i class="fas fa-folder-open"></i>
+                        <span data-i18n="nav.projects">Projetos</span>
+                    </a></li>
+                <li><a href="#contact" class="nav-link" data-section="contact">
+                        <i class="fas fa-envelope"></i>
+                        <span data-i18n="nav.contact">Contato</span>
+                    </a></li>
+            </ul>
+            <div class="nav-actions">
+                <div class="dropdown lang-dropdown">
+                    <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false" title="Idioma">
+                        <img src="pt-br.png" class="flag" alt="Português">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu" role="menu">
+                        <button class="dropdown-item lang-option" data-lang="pt" title="Português (BR)">
+                            <img src="pt-br.png" class="flag" alt="Português">
+                        </button>
+                        <button class="dropdown-item lang-option" data-lang="en" title="English">
+                            <img src="us.png" class="flag" alt="English">
+                        </button>
+                        <button class="dropdown-item lang-option" data-lang="es" title="Español">
+                            <img src="es.png" class="flag" alt="Español">
+                        </button>
+                    </div>
+                </div>
+                <div class="dropdown theme-dropdown">
+                    <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false" title="Tema">
+                        <i class="fas fa-moon"></i>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu" role="menu">
+                        <button class="dropdown-item theme-option" data-theme="light" title="Claro">
+                            <i class="fas fa-sun"></i>
+                        </button>
+                        <button class="dropdown-item theme-option" data-theme="dark" title="Escuro">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                        <button class="dropdown-item theme-option" data-theme="system" title="Sistema">
+                            <i class="fas fa-desktop"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Conteúdo Principal -->
+    <main id="main-content">
+        <!-- Seção Home -->
+        <header id="home" class="hero">
+            <div class="hero-background"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <p class="hero-greeting" data-i18n="home.greeting">Olá, eu sou</p>
+                        <h1 class="hero-name">Cleiton Pinheiro</h1>
+                        <h2 class="subtitle" data-i18n="home.title">
+                            Full Stack Developer
+                        </h2>
+                        <p class="description" data-i18n="home.description">
+                            Transformo ideias em soluções digitais inovadoras. Especializado em desenvolvimento web
+                            moderno com foco em experiência do usuário e performance.
+                        </p>
+                      <!--   <div class="hero-buttons">
+                            <a href="#projects" class="btn btn-primary" data-i18n="home.cta_projects">Ver Projetos</a>
+                            <a href="#contact" class="btn btn-outline" data-i18n="home.cta_contact">Entre em Contato</a>
+                        </div> -->
+                    </div>
+                    <div class="hero-image">
+                        <div class="profile-card">
+                            <div class="profile-image">
+                                <img src="Avatar.jpg" alt="Cleiton Pinheiro">
+                            </div>
+                            <div class="status-indicator">
+                                <span class="status-dot"></span>
+                                <span data-i18n="home.available">Disponível para projetos</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               <!--  <div class="social-links">
+                    <a href="https://github.com/cleitonvpinheiro/" class="social-link" target="_blank" rel="noopener noreferrer"
+                        aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/cleiton-vicente-pinheiro/" class="social-link" target="_blank"
+                        rel="noopener noreferrer" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:cleiton.v.pinheiro@gmail.com" class="social-link" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div> -->
+            </div>
+            <div class="scroll-indicator">
+                <div class="scroll-arrow"></div>
+            </div>
+        </header>
+
+        <!-- Seção Sobre -->
+        <section id="about">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-i18n="about.title">Sobre Mim</h2>
+                    <p class="section-subtitle" data-i18n="about.subtitle">
+                        Conheça minha jornada e paixão por tecnologia
+                    </p>
+                </div>
+                <div class="about-content">
+                    <div class="about-stats">
+                        <div class="stat-card">
+                            <div class="stat-number">3+</div>
+                            <div class="stat-label" data-i18n="about.stat_experience">Anos de Experiência</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">15+</div>
+                            <div class="stat-label" data-i18n="about.stat_projects">Projetos Concluídos</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label" data-i18n="about.stat_dedication">Dedicação</div>
+                        </div>
+                    </div>
+                    <div class="about-text">
+                        <div class="about-description">
+                            <h3 data-i18n="about.history_title">Minha História</h3>
+                            <p data-i18n="about.p1">
+                                Sou um <strong>analista de infraestrutura de TI</strong> em transição para
+                                desenvolvimento de software,
+                                com uma paixão crescente por criar soluções digitais inovadoras. Minha jornada começou
+                                na infraestrutura,
+                                onde desenvolvi uma base sólida em sistemas e redes, e agora estou aplicando essa
+                                experiência no
+                                desenvolvimento web moderno.
+                            </p>
+                            <p data-i18n="about.p2">
+                                Especializo-me em <strong>JavaScript, React, Node.js</strong> e outras tecnologias
+                                modernas,
+                                sempre focando em criar experiências de usuário excepcionais e código limpo e eficiente.
+                            </p>
+                            <div class="about-highlights">
+                                <div class="highlight-item">
+                                    <i class="fas fa-code"></i>
+                                    <span data-i18n="about.highlight_fullstack">Desenvolvimento Full Stack</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-mobile-alt"></i>
+                                    <span data-i18n="about.highlight_responsive">Design Responsivo</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-database"></i>
+                                    <span data-i18n="about.highlight_data">Gestão de Dados</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-users"></i>
+                                    <span data-i18n="about.highlight_teamwork">Trabalho em Equipe</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="about-personal">
+                            <h3 data-i18n="about.personal_title">Além do Código</h3>
+                            <p data-i18n="about.p3">
+                                Quando não estou programando, sou um pai dedicado e apaixonado por futebol e videogames.
+                                Acredito que o equilíbrio entre vida pessoal e profissional é essencial para a
+                                criatividade e produtividade.
+                            </p>
+                            <div class="about-actions">
+                                <div class="cv-actions">
+                                    <a href="Cleiton Pinheiro CV PT.pdf" class="btn btn-outline cv-btn-pt" download
+                                        data-i18n="about.cv_pt">Baixar CV (PT)</a>
+                                    <a href="Cleiton Pinheiro CV EN.pdf" class="btn btn-outline cv-btn-en" download
+                                        data-i18n="about.cv_en">Baixar CV (EN)</a>
+                                </div>
+                                <a href="#contact" class="btn btn-primary">
+                                    <i class="fas fa-envelope"></i>
+                                    <span data-i18n="about.cta_contact">Vamos Conversar</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Experiência -->
+        <section id="experience">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-i18n="experience.title">Experiência Profissional</h2>
+                    <p class="section-subtitle" data-i18n="experience.subtitle">
+                        Minha trajetória profissional e conquistas
+                    </p>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-period" data-i18n="experience.job1_period">2021 - Presente</div>
+                            <h3 data-i18n="experience.job1_title">Analista de Infraestrutura de TI</h3>
+                            <h4 data-i18n="experience.job1_company">Empresa Atual</h4>
+                            <p data-i18n="experience.job1_description">
+                                Responsável pela gestão e manutenção da infraestrutura de TI, incluindo servidores,
+                                redes e sistemas. Implementação de soluções automatizadas e otimização de processos.
+                            </p>
+                            <div class="timeline-skills">
+                                <span class="skill-tag">Windows Server</span>
+                                <span class="skill-tag">Linux</span>
+                                <span class="skill-tag" data-i18n="experience.skill_networks">Redes</span>
+                                <span class="skill-tag" data-i18n="experience.skill_virtualization">Virtualização</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-period" data-i18n="experience.job2_period">2022 - Presente</div>
+                            <h3 data-i18n="experience.job2_title">Desenvolvedor Full Stack</h3>
+                            <h4 data-i18n="experience.job2_company">Projetos Freelance</h4>
+                            <p data-i18n="experience.job2_description">
+                                Desenvolvimento de aplicações web modernas utilizando React, Node.js e outras
+                                tecnologias.
+                                Foco em criar soluções escaláveis e com excelente experiência do usuário.
+                            </p>
+                            <div class="timeline-skills">
+                                <span class="skill-tag">React</span>
+                                <span class="skill-tag">Node.js</span>
+                                <span class="skill-tag">JavaScript</span>
+                                <span class="skill-tag">TypeScript</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-period" data-i18n="experience.job3_period">2023 - Presente</div>
+                            <h3 data-i18n="experience.job3_title">Estudos e Certificações</h3>
+                            <h4 data-i18n="experience.job3_company">Desenvolvimento Contínuo</h4>
+                            <p data-i18n="experience.job3_description">
+                                Constantemente aprimorando habilidades através de cursos, certificações e projetos
+                                pessoais.
+                                Foco em tecnologias modernas e melhores práticas de desenvolvimento.
+                            </p>
+                            <div class="timeline-skills">
+                                <span class="skill-tag">React</span>
+                                <span class="skill-tag">Next.js</span>
+                                <span class="skill-tag">MongoDB</span>
+                                <span class="skill-tag">AWS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Habilidades -->
+        <section id="skills">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-i18n="skills.title">Habilidades Técnicas</h2>
+                    <p class="section-subtitle" data-i18n="skills.subtitle">
+                        Tecnologias e ferramentas que domino
+                    </p>
+                </div>
+                <div class="skills-categories">
+                    <div class="skill-category">
+                        <h3><i class="fas fa-code"></i> <span data-i18n="skills.frontend">Frontend</span></h3>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fab fa-html5"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>HTML5</h4>
+                                    <div class="skill-level">
+                                        <div class="skill-progress" data-level="90"></div>
+                                    </div>
+                                    <span class="skill-percentage">90%</span>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fab fa-css3-alt"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>CSS3</h4>
+                                    <div class="skill-level">
+                                        <div class="skill-progress" data-level="85"></div>
+                                    </div>
+                                    <span class="skill-percentage">85%</span>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fab fa-js"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>JavaScript</h4>
+                                    <div class="skill-level">
+                                        <div class="skill-progress" data-level="80"></div>
+                                    </div>
+                                    <span class="skill-percentage">80%</span>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fab fa-react"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>React</h4>
+                                    <div class="skill-level">
+                                        <div class="skill-progress" data-level="80"></div>
+                                    </div>
+                                    <span class="skill-percentage">80%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3><i class="fas fa-server"></i> <span data-i18n="skills.backend">Backend</span></h3>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fab fa-node-js"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>Node.js</h4>
+                                    <div class="skill-level">
+                                        <div class="skill-progress" data-level="75"></div>
+                                    </div>
+                                    <span class="skill-percentage">75%</span>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fas fa-database"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>MongoDB</h4>
+                                    <div class="skill-level">
+                                        <div class="skill-progress" data-level="70"></div>
+                                    </div>
+                                    <span class="skill-percentage">70%</span>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fas fa-code-branch"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>Express.js</h4>
+                                    <div class="skill-level">
+                                        <div class="skill-progress" data-level="75"></div>
+                                    </div>
+                                    <span class="skill-percentage">75%</span>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fas fa-cloud"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>REST APIs</h4>
+                                    <div class="skill-level">
+                                        <div class="skill-progress" data-level="80"></div>
+                                    </div>
+                                    <span class="skill-percentage">80%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3><i class="fas fa-tools"></i> <span data-i18n="skills.tools">Ferramentas</span></h3>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fab fa-git-alt"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>Git</h4>
+                                    <div class="skill-level">
+                                        <div class="skill-progress" data-level="85"></div>
+                                    </div>
+                                    <span class="skill-percentage">85%</span>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fab fa-docker"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>Docker</h4>
+                                    <div class="skill-level">
+                                        <div class="skill-progress" data-level="65"></div>
+                                    </div>
+                                    <span class="skill-percentage">65%</span>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fab fa-aws"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>AWS</h4>
+                                    <div class="skill-level">
+                                        <div class="skill-progress" data-level="60"></div>
+                                    </div>
+                                    <span class="skill-percentage">60%</span>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fas fa-terminal"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>Linux</h4>
+                                    <div class="skill-level">
+                                        <div class="skill-progress" data-level="80"></div>
+                                    </div>
+                                    <span class="skill-percentage">80%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Projetos -->
+        <section id="projects">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-i18n="projects.title">Projetos em Destaque</h2>
+                    <p class="section-subtitle" data-i18n="projects.subtitle">
+                        Alguns dos meus trabalhos mais recentes
+                    </p>
+                </div>
+                <div class="projects-filter">
+                    <button class="filter-btn active" data-filter="all" data-i18n="projects.filter_all">Todos</button>
+                    <button class="filter-btn" data-filter="web" data-i18n="projects.filter_web">Web Apps</button>
+                    <button class="filter-btn" data-filter="mobile" data-i18n="projects.filter_mobile">Mobile</button>
+                    <button class="filter-btn" data-filter="api" data-i18n="projects.filter_api">APIs</button>
+                </div>
+                <div id="github-stats" class="github-stats-container">
+                    <!-- Estatísticas do GitHub serão carregadas dinamicamente -->
+                </div>
+                <div class="projects-grid" id="projects-container">
+                    <!-- Projetos adicionados via JavaScript -->
+                </div>
+                <div class="projects-cta">
+                    <p data-i18n="projects.cta_text">Interessado em ver mais?</p>
+                    <div class="cta-buttons">
+                        <a href="https://github.com/cleitonvpinheiro" class="btn btn-primary" target="_blank"
+                            rel="noopener noreferrer">
+                            <i class="fab fa-github"></i>
+                            <span data-i18n="projects.cta_github">Ver no GitHub</span>
+                        </a>
+                        <a href="#contact" class="btn btn-outline">
+                            <i class="fas fa-envelope"></i>
+                            <span data-i18n="projects.cta_contact">Vamos Conversar</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Contato -->
+        <section id="contact">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-i18n="contact.title">Vamos Trabalhar Juntos?</h2>
+                    <p class="section-subtitle" data-i18n="contact.subtitle">
+                        Estou sempre aberto a novas oportunidades e projetos interessantes
+                    </p>
+                </div>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3 data-i18n="contact.email_label">Email</h3>
+                                <p>cleiton.v.pinheiro@gmail.com</p>
+                                <a href="mailto:cleiton.v.pinheiro@gmail.com" class="contact-btn">
+                                    <i class="fas fa-paper-plane"></i>
+                                    <span data-i18n="contact.send_email">Enviar Email</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3 data-i18n="contact.whatsapp_label">WhatsApp</h3>
+                                <p>+55 (41) 98841-2058</p>
+                                <a href="https://wa.me/5541988412058" class="contact-btn" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <i class="fab fa-whatsapp"></i>
+                                    <span data-i18n="contact.whatsapp_btn">Conversar</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3 data-i18n="contact.location_label">Localização</h3>
+                                <p data-i18n="contact.location_value">Curitiba, PR - Brasil</p>
+                                <span class="availability">
+                                    <i class="fas fa-circle"></i>
+                                    <span data-i18n="contact.availability">Disponível para trabalho remoto</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form-container">
+                        <form class="contact-form" id="contactForm">
+                            <h3 data-i18n="contact.form_title">Envie uma Mensagem</h3>
+                            <div class="form-group">
+                                <label for="name" data-i18n="contact.form_name">Nome</label>
+                                <input type="text" id="name" name="name"
+                                    data-i18n-placeholder="contact.form_name_placeholder" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" data-i18n="contact.form_email">Email</label>
+                                <input type="email" id="email" name="email"
+                                    data-i18n-placeholder="contact.form_email_placeholder" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject" data-i18n="contact.form_subject">Assunto</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="" data-i18n="contact.form_subject_placeholder">Selecione um assunto
+                                    </option>
+                                    <option value="freelance" data-i18n="contact.form_subject_freelance">Projeto
+                                        Freelance</option>
+                                    <option value="job" data-i18n="contact.form_subject_job">Oportunidade de Emprego
+                                    </option>
+                                    <option value="collaboration" data-i18n="contact.form_subject_collaboration">
+                                        Colaboração</option>
+                                    <option value="other" data-i18n="contact.form_subject_other">Outro</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message" data-i18n="contact.form_message">Mensagem</label>
+                                <textarea id="message" name="message" rows="5"
+                                    data-i18n-placeholder="contact.form_message_placeholder" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-paper-plane"></i>
+                                <span data-i18n="contact.form_submit">Enviar Mensagem</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <div class="social-connect">
+                    <h3 data-i18n="contact.social_title">Conecte-se Comigo</h3>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/cleiton-vicente-pinheiro/" class="social-link linkedin"
+                            target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                            <span data-i18n="social.linkedin">LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/cleitonvpinheiro" class="social-link github" target="_blank"
+                            rel="noopener noreferrer" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                            <span data-i18n="social.github">GitHub</span>
+                        </a>
+                        <a href="https://wa.me/5541988412058" class="social-link whatsapp" target="_blank"
+                            rel="noopener noreferrer" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                            <span data-i18n="social.whatsapp">WhatsApp</span>
+                        </a>
+                        <a href="mailto:cleiton.v.pinheiro@gmail.com" class="social-link email" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                            <span data-i18n="social.email">Email</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rodapé -->
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-info">
+                        <div class="footer-main">
+                            <p data-i18n="footer.rights">&copy; 2026 Cleiton Vicente Pinheiro. Todos os direitos reservados.
+                            </p>
+                            <p class="footer-subtitle" data-i18n="footer.built_with">Desenvolvido com ❤️ usando
+                                tecnologias modernas</p>
+                        </div>
+                        <div class="footer-links">
+                            <a href="#home" data-i18n="nav.home">Início</a>
+                            <a href="#about" data-i18n="nav.about">Sobre</a>
+                            <a href="#projects" data-i18n="nav.projects">Projetos</a>
+                            <a href="#contact" data-i18n="nav.contact">Contato</a>
+                        </div>
+                    </div>
+                    <div class="footer-social">
+                        <a href="https://github.com/cleitonvpinheiro" target="_blank" rel="noopener noreferrer"
+                            aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/cleiton-pinheiro" target="_blank" rel="noopener noreferrer"
+                            aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="mailto:cleiton.v.pinheiro@gmail.com" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
