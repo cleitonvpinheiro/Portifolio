@@ -1433,6 +1433,65 @@ section:nth-child(even) {
     transform: scale(1.05);
 }
 
+.project-card h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 1rem 1.5rem 0.5rem;
+}
+
+.project-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0 1.5rem 0.75rem;
+}
+
+.project-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0 1.5rem 1rem;
+}
+
+.project-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.85rem;
+    color: var(--text-primary);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    padding: 4px 10px;
+    font-weight: 600;
+}
+
+.btn-github {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0 1.5rem 1.25rem;
+    background: #0d1117;
+    color: #fff;
+    border: 1px solid #30363d;
+}
+
+.btn-github:hover {
+    background: #161b22;
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.btn-github i {
+    font-size: 1rem;
+}
+
+[data-theme="dark"] .project-meta span {
+    background: rgba(255,255,255,0.06);
+    border-color: rgba(255,255,255,0.12);
+    color: var(--text-secondary);
+}
+
 .project-overlay {
     position: absolute;
     top: 0;
