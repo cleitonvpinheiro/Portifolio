@@ -1,6 +1,5 @@
 [build]
-  publish = "Portifolio"
-  base = "public"
+  publish = "Portifolio/public"
 
 [functions]
   directory = "netlify/functions"
