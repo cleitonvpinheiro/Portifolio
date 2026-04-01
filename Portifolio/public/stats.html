@@ -42,13 +42,11 @@
     async function main(){
       const params = new URLSearchParams(location.search);
       const token = params.get('token') || '';
-      if(!token){
-        document.body.innerHTML = '<div class="wrap"><h1>Restrito</h1><div class="muted">Forneça o token: /stats.html?token=SEU_TOKEN</div></div>';
-        return;
-      }
-      const res = await fetch('/api/visits/stats?token=' + encodeURIComponent(token));
+      const url = token ? ('/api/visits/stats?token=' + encodeURIComponent(token)) : '/api/visits/stats';
+      const res = await fetch(url);
       if(!res.ok){
-        document.body.innerHTML='<div class="wrap"><h1>Sem acesso</h1><div class="muted">Token inválido ou não configurado.</div></div>';
+        const msg = token ? 'Token inválido ou não configurado.' : 'Acesso protegido: use /stats.html?token=SEU_TOKEN';
+        document.body.innerHTML='<div class="wrap"><h1>Sem acesso</h1><div class="muted">'+msg+'</div></div>';
         return;
       }
       const data = await res.json();
@@ -66,6 +64,7 @@
         tr.innerHTML = '<td>'+d.day+'</td><td>'+d.total+'</td><td>'+d.unique+'</td>';
         rows.appendChild(tr);
       });
+      document.getElementById('accessMode').textContent = token ? 'Acesso: token' : 'Acesso: público';
     }
     main();
   </script>

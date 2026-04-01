@@ -18,7 +18,7 @@ exports.handler = async (event) => {
 
   const token = process.env.ANALYTICS_TOKEN;
   const provided = (event.queryStringParameters && event.queryStringParameters.token) || '';
-  if (!token || provided !== token) {
+  if (token && provided !== token) {
     return { statusCode: 401, body: JSON.stringify({ error: 'unauthorized' }) };
   }
 
