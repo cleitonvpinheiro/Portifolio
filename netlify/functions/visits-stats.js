@@ -1,4 +1,11 @@
-const { getStore } = require('@netlify/blobs');
+function getStoreSafe() {
+  try {
+    const { getStore } = require('@netlify/blobs');
+    return getStore('portfolio-analytics');
+  } catch (e) {
+    return null;
+  }
+}
 
 function pruneEvents(events, daysToKeep = 90, maxEvents = 20000) {
   const cutoff = Date.now() - daysToKeep * 24 * 60 * 60 * 1000;
@@ -22,7 +29,22 @@ exports.handler = async (event) => {
     return { statusCode: 401, body: JSON.stringify({ error: 'unauthorized' }) };
   }
 
-  const store = getStore('portfolio-analytics');
+  const store = getStoreSafe();
+  if (!store) {
+    return {
+      statusCode: 200,
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        total: 0,
+        today: 0,
+        todayUnique: 0,
+        last7: 0,
+        last7Unique: 0,
+        perDay: [],
+        warning: 'storage_unavailable',
+      }),
+    };
+  }
   let events = [];
   try {
     const raw = await store.get('events.json');

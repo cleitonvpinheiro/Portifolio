@@ -50,6 +50,10 @@
         return;
       }
       const data = await res.json();
+      if (data && data.warning === 'storage_unavailable') {
+        document.getElementById('accessMode').textContent = 'Erro: storage_unavailable (verifique Logs da Function no Netlify)';
+        return;
+      }
       document.getElementById('total').textContent = data.total ?? '-';
       document.getElementById('today').textContent = data.today ?? '-';
       document.getElementById('todayUnique').textContent = (data.todayUnique != null) ? (data.todayUnique + ' únicos') : '';
