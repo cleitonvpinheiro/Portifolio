@@ -1,6 +1,7 @@
-function getStoreSafe() {
+function getStoreSafe(event) {
   try {
-    const { getStore } = require('@netlify/blobs');
+    const { connectLambda, getStore } = require('@netlify/blobs');
+    connectLambda(event);
     return { store: getStore('portfolio-analytics') };
   } catch (e) {
     return {
@@ -36,7 +37,7 @@ exports.handler = async (event) => {
     return { statusCode: 401, body: JSON.stringify({ error: 'unauthorized' }) };
   }
 
-  const { store, error } = getStoreSafe();
+  const { store, error } = getStoreSafe(event);
   if (!store) {
     return {
       statusCode: 200,

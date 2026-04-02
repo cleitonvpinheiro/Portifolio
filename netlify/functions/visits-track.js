@@ -1,7 +1,8 @@
 const crypto = require('crypto');
-function getStoreSafe() {
+function getStoreSafe(event) {
   try {
-    const { getStore } = require('@netlify/blobs');
+    const { connectLambda, getStore } = require('@netlify/blobs');
+    connectLambda(event);
     return { store: getStore('portfolio-analytics') };
   } catch (e) {
     return {
@@ -31,7 +32,7 @@ exports.handler = async (event) => {
     return { statusCode: 405, body: JSON.stringify({ error: 'method_not_allowed' }) };
   }
 
-  const { store, error } = getStoreSafe();
+  const { store, error } = getStoreSafe(event);
   if (!store) {
     return { statusCode: 200, body: JSON.stringify({ ok: true, stored: false, warning: 'storage_unavailable', warningDetail: error || undefined }) };
   }
