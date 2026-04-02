@@ -2,9 +2,16 @@ const crypto = require('crypto');
 function getStoreSafe() {
   try {
     const { getStore } = require('@netlify/blobs');
-    return getStore('portfolio-analytics');
+    return { store: getStore('portfolio-analytics') };
   } catch (e) {
-    return null;
+    return {
+      store: null,
+      error: {
+        name: e && e.name ? String(e.name) : 'Error',
+        code: e && e.code ? String(e.code) : '',
+        message: e && e.message ? String(e.message) : 'unknown_error',
+      },
+    };
   }
 }
 
@@ -24,9 +31,9 @@ exports.handler = async (event) => {
     return { statusCode: 405, body: JSON.stringify({ error: 'method_not_allowed' }) };
   }
 
-  const store = getStoreSafe();
+  const { store, error } = getStoreSafe();
   if (!store) {
-    return { statusCode: 200, body: JSON.stringify({ ok: true, stored: false }) };
+    return { statusCode: 200, body: JSON.stringify({ ok: true, stored: false, warning: 'storage_unavailable', warningDetail: error || undefined }) };
   }
   let data = { version: 1, events: [] };
   try {

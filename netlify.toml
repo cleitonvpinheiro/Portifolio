@@ -1,5 +1,6 @@
 [build]
   publish = "Portifolio/public"
+  command = "npm ci"
 
 [build.environment]
   NODE_VERSION = "18"

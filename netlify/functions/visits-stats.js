@@ -1,9 +1,16 @@
 function getStoreSafe() {
   try {
     const { getStore } = require('@netlify/blobs');
-    return getStore('portfolio-analytics');
+    return { store: getStore('portfolio-analytics') };
   } catch (e) {
-    return null;
+    return {
+      store: null,
+      error: {
+        name: e && e.name ? String(e.name) : 'Error',
+        code: e && e.code ? String(e.code) : '',
+        message: e && e.message ? String(e.message) : 'unknown_error',
+      },
+    };
   }
 }
 
@@ -29,7 +36,7 @@ exports.handler = async (event) => {
     return { statusCode: 401, body: JSON.stringify({ error: 'unauthorized' }) };
   }
 
-  const store = getStoreSafe();
+  const { store, error } = getStoreSafe();
   if (!store) {
     return {
       statusCode: 200,
@@ -42,6 +49,7 @@ exports.handler = async (event) => {
         last7Unique: 0,
         perDay: [],
         warning: 'storage_unavailable',
+        warningDetail: error || undefined,
       }),
     };
   }
